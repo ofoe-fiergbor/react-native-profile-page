@@ -1,10 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { Feather, AntDesign } from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source = {require('./assets/saitama.jpg')} style={styles.image}/>
+      <View style={styles.head}>
+      <Image source={require('./assets/saitama.jpg')} style={styles.image} />
+      <Feather name='camera' style={styles.icon}/>
+      </View>
       <View style={styles.details}>
         <View>
           <Text style={styles.label}>School</Text>
@@ -25,8 +29,9 @@ export default function App() {
         <View style={styles.subDetail}>
           <Text style={styles.label2}>Emergency Contact</Text>
           <Text style={styles.detail}>+44 876 998909</Text>
+          <AntDesign style={styles.contactIcon} name='contacts' />
         </View>
-        
+
       </View>
     </View>
   );
@@ -38,31 +43,50 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingTop: 100
   },
-  image:{
-    width:120,
-    height:120,
+  contactIcon:{
+    position:'absolute',
+    left: 170,
+    top: 20,
+    fontSize: 18,
+    color: '#D5D8DC'
+  },
+  image: {
+    width: 120,
+    height: 120,
     borderRadius: 60,
     alignSelf: "center",
-    marginBottom: 50
+    marginBottom: 30,
   },
-  details:{
+  icon:{
+    backgroundColor: '#06F1E4',
+    color:'white',
+    width:25,
+    height: 25,
+    position:'absolute',
+    left:205,
+    top:90,
+    paddingTop:5,
+    paddingLeft:6,
+    borderRadius:12.5
+  },
+  details: {
     alignSelf: 'center',
-    flex:1
+    flex: 1
   },
-  label:{
+  label: {
     color: '#ABB2B9',
     fontSize: 10,
     marginBottom: 3,
   },
-  detail:{
+  detail: {
     marginBottom: 2
   },
-  label2:{
+  label2: {
     color: '#06F1E4',
     fontSize: 10,
     marginBottom: 3,
   },
-  subDetail:{
+  subDetail: {
     borderBottomColor: '#D5D8DC',
     borderBottomWidth: 1,
     marginTop: 10
