@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Feather, AntDesign } from '@expo/vector-icons';
 
 export default function App() {
@@ -31,7 +31,11 @@ export default function App() {
           <Text style={styles.detail}>+44 876 998909</Text>
           <AntDesign style={styles.contactIcon} name='contacts' />
         </View>
-
+        <View>
+          <TouchableOpacity>
+            <Text style={styles.btn}>UPDATE PROFILE</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -49,6 +53,14 @@ const styles = StyleSheet.create({
     top: 20,
     fontSize: 18,
     color: '#D5D8DC'
+  },
+  btn:{
+    backgroundColor: 'orange',
+    marginTop: 30,
+    textAlign: 'center',
+    height: 30,
+    paddingTop: 5,
+    borderRadius: 20
   },
   image: {
     width: 120,
@@ -77,6 +89,7 @@ const styles = StyleSheet.create({
     color: '#ABB2B9',
     fontSize: 10,
     marginBottom: 3,
+    marginTop: 4
   },
   detail: {
     marginBottom: 2
